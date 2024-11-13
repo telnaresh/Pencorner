@@ -1,5 +1,7 @@
 package com.nareshtechhub.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,11 @@ public class PenService {
 	public PenDetails get(int id) {
 	    PenDetails penDetails = dao.getById(id);  
 	    return penDetails;  
+	}
+
+	@Transactional
+	public List<PenDetails> findAll() {
+		return dao.findAll();
 	}
 
 	

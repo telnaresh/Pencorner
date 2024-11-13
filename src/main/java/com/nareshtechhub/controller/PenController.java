@@ -1,5 +1,7 @@
 package com.nareshtechhub.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +32,12 @@ public class PenController {
 	public String pencreated(@RequestBody PenDetails pd){
 		penservice.save(pd);
 		return "Pen details saved";  
+		
+	}
+	
+	@GetMapping("/pens")
+	public List<PenDetails> getAllpendetails(){
+		return penservice.findAll();
 		
 	}
 	
